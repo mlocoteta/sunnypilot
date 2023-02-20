@@ -113,9 +113,9 @@ class CarInterfaceBase(ABC):
   @classmethod
   def get_params(cls, candidate: str, fingerprint: Dict[int, Dict[int, int]], car_fw: List[car.CarParams.CarFw], experimental_long: bool):
     ret = CarInterfaceBase.get_std_params(candidate)
+    ret = cls._get_params(ret, candidate, fingerprint, car_fw, experimental_long)
     if Params().get_bool("EnforceTorqueLateral"):
       ret = CarInterfaceBase.sp_configure_torque_tune(candidate, ret)
-    ret = cls._get_params(ret, candidate, fingerprint, car_fw, experimental_long)
 
     # Set common params using fields set by the car interface
     # TODO: get actual value, for now starting with reasonable value for
