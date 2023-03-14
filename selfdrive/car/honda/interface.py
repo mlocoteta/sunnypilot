@@ -222,6 +222,16 @@ class CarInterface(CarInterfaceBase):
       ret.lateralTuning.pid.kpV, ret.lateralTuning.pid.kiV = [[0.2], [0.06]]
       tire_stiffness_factor = 0.677
 
+    elif candidate == CAR.ACCORD_NIDEC:
+      stop_and_go = False
+      ret.mass = 3279. * CV.LB_TO_KG + STD_CARGO_KG
+      ret.wheelbase = 2.75
+      ret.centerToFront = ret.wheelbase * 0.39
+      ret.steerRatio = 13.66 # 13.37 is spec
+      ret.lateralParams.torqueBP, ret.lateralParams.torqueV = [[0, 239], [0, 239]]
+      ret.lateralTuning.pid.kpV, ret.lateralTuning.pid.kiV = [[0.25], [0.05]]      
+      tire_stiffness_factor = 0.8467
+
     elif candidate in (CAR.ODYSSEY, CAR.ODYSSEY_CHN):
       ret.mass = 1900. + STD_CARGO_KG
       ret.wheelbase = 3.00
