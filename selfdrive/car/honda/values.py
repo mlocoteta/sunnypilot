@@ -399,9 +399,6 @@ FW_VERSIONS = {
     (Ecu.hud, 0x416961521, None): [
       b'77959-TZ5-A110\x00\x00',
     ],
-    (Ecu.apgs, 0x18DA60F1, None): [
-      b'78109-TZ5-A610\x00\x00',
-    ],
   },
   CAR.ACURA_MDX_HYBRID: {
     (Ecu.vsa, 0x18DA28F1, None): [
