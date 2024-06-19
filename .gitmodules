@@ -3,7 +3,7 @@
   url = ../../sunnyhaibin/panda.git
 [submodule "opendbc"]
   path = opendbc
-  url = ../../mlocoteta/opendbc.git
+  url = ../../sunnyhaibin/opendbc.git
 [submodule "cereal"]
   path = cereal
   url = ../../sunnyhaibin/cereal.git
