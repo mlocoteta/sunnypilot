@@ -268,13 +268,19 @@ class CAR(Platforms):
     dbc_dict('honda_civic_touring_2016_can_generated', 'acura_ilx_2016_nidec'),
   )
   HONDA_ACCORD_4CYL_9TH_GEN = HondaNidecPlatformConfig(
-    [HondaCarDocs("Honda Accord 4-Cylinder 2016-17")],
+    [HondaCarDocs("Honda Accord 4-Cylinder 2016-17", footnotes=[Footnote.ACCORD_NIDEC, Footnote.SERIAL_STEERING])],
+    CarSpecs(mass=1487, wheelbase=2.75, centerToFrontRatio=0.39, steerRatio=13.66),  # 13.37 is end-to-end spec
+    dbc_dict('honda_accord_touring_2016_can_generated', 'acura_ilx_2016_nidec'),
+    flags=HondaFlags.NIDEC_ALT_SCM_MESSAGES,
+  )
+  HONDA_ACCORD_HEV_9TH_GEN = HondaNidecPlatformConfig(
+    [HondaCarDocs("Honda Accord Hybrid 2016-17", footnotes=[Footnote.ACCORD_NIDEC, Footnote.SERIAL_STEERING])],
     CarSpecs(mass=1487, wheelbase=2.75, centerToFrontRatio=0.39, steerRatio=13.66),  # 13.37 is end-to-end spec
     dbc_dict('honda_accord_touring_2016_can_generated', 'acura_ilx_2016_nidec'),
     flags=HondaFlags.NIDEC_ALT_SCM_MESSAGES,
   )
   HONDA_CLARITY = HondaNidecPlatformConfig(
-    [HondaCarDocs("Honda Clarity 2018-22", footnotes=[Footnote.ACCORD_NIDEC, Footnote.SERIAL_STEERING])],
+    [HondaCarDocs("Honda Clarity 2018-22")],
     CarSpecs(mass=1838, wheelbase=2.75, centerToFrontRatio=0.4, steerRatio=16.50),  # 12.72 is end-to-end spec
     dbc_dict('honda_clarity_hybrid_2018_can_generated', 'acura_ilx_2016_nidec'),
   )
@@ -338,6 +344,7 @@ FW_QUERY_CONFIG = FwQueryConfig(
 STEER_THRESHOLD = {
   # default is 1200, overrides go here
   CAR.HONDA_ACCORD_4CYL_9TH_GEN: 30,
+  CAR.HONDA_ACCORD_HEV_9TH_GEN: 30,
   CAR.ACURA_RDX: 400,
   CAR.HONDA_CRV_EU: 400,
 }
@@ -346,9 +353,7 @@ HONDA_NIDEC_ALT_PCM_ACCEL = CAR.with_flags(HondaFlags.NIDEC_ALT_PCM_ACCEL)
 HONDA_NIDEC_ALT_SCM_MESSAGES = CAR.with_flags(HondaFlags.NIDEC_ALT_SCM_MESSAGES)
 HONDA_BOSCH = CAR.with_flags(HondaFlags.BOSCH)
 HONDA_BOSCH_RADARLESS = CAR.with_flags(HondaFlags.BOSCH_RADARLESS)
-SERIAL_STEERING = {CAR.HONDA_ACCORD_4CYL_9TH_GEN, }
+SERIAL_STEERING = {CAR.HONDA_ACCORD_4CYL_9TH_GEN, CAR.HONDA_ACCORD_HEV_9TH_GEN}
 
 
 DBC = CAR.create_dbc_map()
-
-SERIAL_STEERING = {CAR.HONDA_ACCORD_4CYL_9TH_GEN, }
