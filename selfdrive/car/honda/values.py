@@ -276,7 +276,7 @@ class CAR(Platforms):
   HONDA_ACCORD_HEV_9TH_GEN = HondaNidecPlatformConfig(
     [HondaCarDocs("Honda Accord Hybrid 2016-17", footnotes=[Footnote.ACCORD_NIDEC, Footnote.SERIAL_STEERING])],
     CarSpecs(mass=1487, wheelbase=2.75, centerToFrontRatio=0.39, steerRatio=13.66),  # 13.37 is end-to-end spec
-    dbc_dict('honda_accord_touring_2016_can_generated', 'acura_ilx_2016_nidec'),
+    dbc_dict('honda_accord_touring_hybrid_2017_can_generated', 'acura_ilx_2016_nidec'),
     flags=HondaFlags.NIDEC_ALT_SCM_MESSAGES,
   )
   HONDA_CLARITY = HondaNidecPlatformConfig(
